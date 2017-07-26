@@ -103,5 +103,5 @@ The way i deal with the latency is by setting the initial state of the vehcile t
 
 ## Simulator Result
 
-<a href="https://youtu.be/2q3c0MhPKyU" target="_blank"><img src="http://img.youtube.com/vi/2q3c0MhPKyU/0.jpg" alt="PID Controller"/></a>
+<a href="https://youtu.be/2q3c0MhPKyU" target="_blank"><img src="http://img.youtube.com/vi/2q3c0MhPKyU/0.jpg" alt="MPC Controller"/></a>
 

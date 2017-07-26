@@ -71,15 +71,15 @@ is the vehicle starting offset of a straight line (reference). If the MPC implem
 
 ## Describes the MPC model in detail
 
-1. The MPC model uses the current state of the vehicle and the path trajectory to find the optimal controller by minimizing the error.  
+1. The MPC model uses the current state of the vehicle and the path trajectory to predict the future of the vehicle by finding the optimal controller and minimizing the error.  
 2. The error we want to minimize is described in the cost function which includes:
-* Cross-track-error between the predicted location and the path trajectory 
-* Orientation error 
+ * Cross-track-error between the predicted location and the path trajectory 
+ * Orientation error 
 3. The cost function also includes:
-* The difference between the vehicle predicted speed and the minimum speed
-* Acceleration 
-* Acceleration Change
-* Orientation 
-* Orientation Change
+ * The difference between the vehicle predicted speed and the minimum speed
+ * Acceleration 
+ * Acceleration Change
+ * Orientation 
+ * Orientation Change
 
 

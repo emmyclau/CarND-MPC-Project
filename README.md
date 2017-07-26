@@ -69,7 +69,7 @@ is the vehicle starting offset of a straight line (reference). If the MPC implem
 2. The `lake_track_waypoints.csv` file has the waypoints of the lake track. You could use this to fit polynomials and points and see of how well your model tracks curve. NOTE: This file might be not completely in sync with the simulator so your solution should NOT depend on it.
 3. For visualization this C++ [matplotlib wrapper](https://github.com/lava/matplotlib-cpp) could be helpful.
 
-## Describes the MPC model in detail
+## The Model 
 
 1. The MPC model uses the current state of the vehicle [x, y, psi, v] and the path trajectory to predict the future of the vehicle by finding the optimal controller (actuators) [a, delta] to minimize the error.  
 2. The error we want to minimize is described in the cost function which includes:
@@ -83,6 +83,20 @@ is the vehicle starting offset of a straight line (reference). If the MPC implem
  * Orientation Change
 4. The MPC model will send the steer_value and throttle_value limited with the actuator constraints back to the simulator with a 100 milliseconds delay. 
 
+## Timestep Length and Elapsed Duration (N & dt)
 
+1. The N = 20 and dt = 0.02 and the duration was 0.4 seconds.  The reason i chose these numbers was that I didn't want the optimization function to optimize for steps too far in the path.  Since the trajectory will be updated every time, there was no need to optimize for a long path.  I would rather the optimization function optimize more accurately for the immediate steps within (0.4 seconds). 
 
+2. I tried larger N and same dt and the duration was longer.  As mentioned in #1, when the duration was longer, the optimization function seemed to optimize more for future steps rather than immediate steps. 
 
+3. I also tried to kept the duration and make dt shorter, I didn't find much benefits by doing that. 
+
+## Polynomial Fitting and MPC Preprocessing
+
+1. The waypoints were preprocessed to change from the map coordinate to the vehicle coordinate. 
+
+2. The initial state of the vehicle is [v * 0.1, y, psi, v] where the x value is velocity * 100 millisecond. 
+
+## Model Predictive Control with Latency
+
+The way i deal with the latency is by setting the initial state of the vehcile to velocity * 100 millisecond which will have the optimization function to start optimizing after the first 100 milliseconds so to take into account that the car will continue for 100 milliseconds with the current speed and then the actuators will apply. 

@@ -99,4 +99,4 @@ is the vehicle starting offset of a straight line (reference). If the MPC implem
 
 ## Model Predictive Control with Latency
 
-The way i deal with the latency is by setting the initial state of the vehcile to velocity * 100 millisecond which will have the optimization function to start optimizing after the first 100 milliseconds so to take into account that the car will continue for 100 milliseconds with the current speed and then the actuators will apply. 
+The way i deal with the latency is by setting the initial state of the vehcile to velocity * 100 millisecond which will have the optimization function to start optimizing after the first 100 milliseconds to take into account that the car will continue for 100 milliseconds with the current speed and then the actuators will apply. 

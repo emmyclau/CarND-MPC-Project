@@ -95,7 +95,12 @@ is the vehicle starting offset of a straight line (reference). If the MPC implem
 
 1. The waypoints were preprocessed to change from the map coordinate to the vehicle coordinate. 
 
-2. The initial state of the vehicle is [v * 0.1, y, psi, v] where the x value is velocity * 100 millisecond. 
+2. The initial state of the vehicle is [px + v * 0.1 * cos(psi), 
+                    py + v * 0.1 * sin(psi),
+                    psi + v / Lf * -delta * 0.1,
+                    v + a * 0.1,
+                    cte + v * sin(epsi) * 0.1,
+                    epsi + (v /Lf * -delta * 0.1)] where the x value is velocity * 100 millisecond. 
 
 ## Model Predictive Control with Latency
 

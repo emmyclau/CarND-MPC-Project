@@ -116,5 +116,5 @@ which will have the optimization function to start optimizing after the first 10
 
 ## Simulator Result
 
-<a href="https://youtu.be/2q3c0MhPKyU" target="_blank"><img src="http://img.youtube.com/vi/2q3c0MhPKyU/0.jpg" alt="MPC Controller"/></a>
+<a href="https://youtu.be/Oo37cKQ-xDg" target="_blank"><img src="http://img.youtube.com/vi/Oo37cKQ-xDg/0.jpg" alt="MPC Controller"/></a>
 

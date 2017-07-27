@@ -100,7 +100,7 @@ is the vehicle starting offset of a straight line (reference). If the MPC implem
                     psi + v / Lf * -delta * 0.1,
                     v + a * 0.1,
                     cte + v * sin(epsi) * 0.1,
-                    epsi + (v /Lf * -delta * 0.1)] where the x value is velocity * 100 millisecond. 
+                    epsi + (v /Lf * -delta * 0.1)]  
 
 ## Model Predictive Control with Latency
 
